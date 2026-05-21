@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  font-family: 'Outfit', sans-serif;
+  background: #060b23;
+  color: #f8fafc;
+  --surface: rgba(15, 23, 42, 0.88);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --primary: #38bdf8;
+  --danger: #fb7185;
+  --secondary: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), transparent 25%),
+    linear-gradient(180deg, #050914 0%, #061323 45%, #091d3c 100%);
+  color: #f8fafc;
+}
+
+#root {
+  padding: 2rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hero-panel {
+  margin-bottom: 1.75rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.45);
+}
+
+.hero-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-title h1 {
+  margin: 0;
+  font-size: clamp(2rem, 2.5vw, 2.75rem);
+}
+
+.hero-title p {
+  margin: 0.25rem 0 0;
+  color: var(--secondary);
+}
+
+.search-panel {
+  margin-bottom: 1.5rem;
+}
+
+.search-panel label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.input-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+}
+
+.input-group input:focus {
+  outline: 2px solid rgba(56, 189, 248, 0.35);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  border: none;
+  background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.alert-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: rgba(248, 113, 113, 0.16);
+  border: 1px solid rgba(251, 113, 133, 0.25);
+  color: #fee2e2;
+}
+
+.loading-panel {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #38bdf8;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.weather-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.4fr 0.9fr;
+}
+
+.weather-card,
+.forecast-panel {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+}
+
+.weather-card.normal {
+  box-shadow: 0 24px 80px rgba(56, 189, 248, 0.12);
+}
+
+.weather-card.warning {
+  border-color: rgba(251, 113, 133, 0.35);
+  background: rgba(244, 63, 94, 0.12);
+}
+
+.weather-head .subtitle {
+  margin: 0 0 0.5rem;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.weather-head h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.weather-head .description {
+  margin-top: 0.5rem;
+  color: var(--secondary);
+  text-transform: capitalize;
+}
+
+.weather-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.weather-value {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.weather-value .label {
+  display: block;
+  color: var(--secondary);
+  font-size: 0.85rem;
+}
+
+.extra-panel {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forecast-panel h3 {
+  margin-top: 0;
+}
+
+.forecast-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin-top: 1rem;
+}
+
+.forecast-card {
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.forecast-day {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 0.95rem;
+}
+
+.forecast-desc {
+  margin: 0.75rem 0 0;
+}
+
+.forecast-values {
+  margin-top: 0.85rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .input-group {
+    gap: 0.65rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
